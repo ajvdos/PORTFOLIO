@@ -123,11 +123,11 @@ export default function Home() {
 
         <div className="hero-photo">
           <img
-            src="/profile.jpg"
+            src="/Profile.jpg"
             alt="April Justine C. Vega"
           />
         </div>
-        
+
       </section>
 
       <section id="about" className="section">
