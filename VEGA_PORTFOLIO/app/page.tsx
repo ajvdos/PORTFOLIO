@@ -10,9 +10,16 @@ const skills = [
   ["PostgreSQL", "Structured data storage and database management."]
 ];
 
+const softSkills = [
+  ["Client Communication", "Clear, professional communication built through years of direct client and customer interaction."],
+  ["Problem Solving", "Strong analytical thinking applied to both technical debugging and client-facing issue resolution."],
+  ["Time Management", "Effective multitasking and prioritization in fast-paced, deadline-driven environments."],
+  ["Team Collaboration", "Experience mentoring teammates and coordinating across clients, vendors, and internal teams."]
+];
+
 const experiences = [
   {
-    period: "Oct 2024 — Present",
+    period: "October 2024 — Present",
     company: "Accenture",
     role: "Integration Consultant",
     points: [
@@ -22,13 +29,41 @@ const experiences = [
     ]
   },
   {
-    period: "Jun 2024 — Present",
+    period: "June 2024 — Sept 2026",
     company: "Automancers",
-    role: "Part-Time Backend Developer",
+    role: "Part-Time | Junior Full Stack Developer",
     points: [
       "Develop and maintain backend API endpoints.",
       "Debug application issues and support feature implementation.",
       "Implement data validation and sanitization to improve stability, security, and performance."
+    ]
+  },
+  {
+    period: "June 24, 2024 — October 4, 2024",
+    company: "EXL",
+    role: "Customer Service Representative",
+    points: [
+      "Delivered consistent, high-quality customer support in a fast-paced service environment.",
+      "Applied strong communication and multitasking skills to resolve client concerns efficiently."
+    ]
+  },
+  {
+    period: "April 20, 2022 — June 9, 2024",
+    company: "Teleperformance",
+    role: "Customer Service Representative",
+    points: [
+      "Consistently achieved top performance metrics over a two-year tenure.",
+      "Mentored new team members on processes, tools, and client communication best practices.",
+      "Handled client-facing interactions requiring adaptability and clear communication."
+    ]
+  },
+  {
+    period: "October 6, 2020 — January 29, 2022",
+    company: "Topdial",
+    role: "Sales Representative",
+    points: [
+      "Built and maintained client relationships through direct sales communication.",
+      "Developed foundational skills in negotiation, persuasion, and client needs assessment."
     ]
   }
 ];
@@ -117,8 +152,9 @@ export default function Home() {
               troubleshooting, backend API development, and application improvements.
             </p>
             <p>
-              I enjoy solving technical problems and building practical solutions while collaborating
-              with development teams, clients, vendors, and stakeholders.
+              Before moving into tech, I spent several years in client-facing sales and customer service
+              roles, which shaped the communication, problem-solving, and collaboration skills I now bring
+              to every project.
             </p>
           </div>
         </div>
@@ -136,6 +172,17 @@ export default function Home() {
             </article>
           ))}
         </div>
+
+        <h2 className="section-title" style={{ marginTop: "3rem" }}>Skills that <span>support the work.</span></h2>
+        <div className="skills-grid">
+          {softSkills.map(([name, description], index) => (
+            <article className="skill-card" key={name}>
+              <span className="number">0{index + 1}</span>
+              <h3>{name}</h3>
+              <p>{description}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="experience" className="section">
@@ -143,7 +190,7 @@ export default function Home() {
         <h2 className="section-title">Experience that connects <span>technology and people.</span></h2>
         <div className="timeline">
           {experiences.map((item) => (
-            <article className="experience-card" key={item.company}>
+            <article className="experience-card" key={`${item.company}-${item.period}`}>
               <div className="period">{item.period}</div>
               <div className="experience-content">
                 <p className="company">{item.company}</p>

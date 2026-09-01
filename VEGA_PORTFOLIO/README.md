@@ -1,51 +1,68 @@
 # AJ Vega Portfolio
 
-Full-stack portfolio built with Next.js, React, TypeScript, Prisma, and PostgreSQL.
+My personal portfolio website, built to showcase my experience and projects — including my work at Accenture, Automancers, and the Adeus Life app.
+
+## Tech Stack
+- Next.js + React
+- TypeScript
+- Prisma ORM
+- PostgreSQL (hosted on Neon)
+- Deployed on Vercel
 
 ## Features
-- Responsive portfolio UI
-- Skills and experience sections
-- Adeus Life project case study
-- Contact form
-- Next.js backend API route
-- PostgreSQL storage via Prisma
-- Ready for Vercel deployment
+- Responsive design for mobile and desktop
+- Experience and skills sections
+- Case study: Adeus Life
+  - Draft Reminder feature
+  - Auth0 → Firebase authentication migration
+  - Homepage redesign
+- Working contact form with backend API and database storage
 
-## Local setup
+## Getting Started
 
-1. Install dependencies:
+Clone the repo and install dependencies:
 
 ```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
 npm install
 ```
 
-2. Create `.env.local`:
+### Set up the database
 
-```bash
-cp .env.example .env.local
+This project uses [Neon](https://neon.tech) for PostgreSQL hosting.
+
+1. Create a free Neon account and project.
+2. Copy your connection string from the Neon dashboard.
+3. Create a `.env` file in the project root:
+
+```dotenv
+DATABASE_URL="postgresql://your-connection-string-here"
 ```
 
-3. Add your PostgreSQL `DATABASE_URL`.
-
-4. Create the database table:
+4. Push the schema to your database:
 
 ```bash
 npx prisma db push
 ```
 
-5. Start:
+### Run the app
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:3000.
+Visit http://localhost:3000.
 
-## Deploy to Vercel
+## Deployment
+
+This project is set up to deploy on [Vercel](https://vercel.com).
 
 1. Push this project to GitHub.
 2. Import the repository into Vercel.
-3. Add the `DATABASE_URL` environment variable in Vercel.
+3. Add the `DATABASE_URL` environment variable in Vercel's project settings (use the **pooled** Neon connection string for production).
 4. Deploy.
 
-Before deployment, make sure your PostgreSQL provider allows external/serverless connections and uses a Vercel-compatible connection string.
+## Contact
+
+Feel free to reach out through the contact form on the live site, or connect with me directly.
