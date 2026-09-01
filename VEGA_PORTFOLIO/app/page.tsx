@@ -7,7 +7,9 @@ const skills = [
   ["Next.js", "Full-stack React framework for modern web applications."],
   ["React", "Building reusable and interactive user interfaces."],
   ["Node.js", "Backend logic, APIs, and server-side development."],
-  ["PostgreSQL", "Structured data storage and database management."]
+  ["PostgreSQL", "Structured data storage and database management."],
+  ["UKG Ready", "Benefits system configuration and end-to-end integration, from discovery through delivery."],
+  ["Everything Benefits", "Benefit enrollment and payroll integrations, including MetLife, Principal, COBRA, 401(k), and 403(b)."]
 ];
 
 const softSkills = [
@@ -23,7 +25,9 @@ const experiences = [
     company: "Accenture",
     role: "Integration Consultant",
     points: [
-      "Support UKG Ready Benefits system configuration and end-to-end integration activities.",
+      "Support UKG Ready Benefits system configuration and end-to-end integration activities, from discovery calls through delivered implementations.",
+      "Delivered Benefit Enrollment integrations using Everything Benefits, including MetLife and Principal.",
+      "Delivered payroll integrations for COBRA, 401(k), and 403(b) plans using Everything Benefits.",
       "Work with API and file-based integrations, data mapping, validation, testing, and troubleshooting.",
       "Collaborate with clients, vendors, and internal teams during onboarding and implementation."
     ]
@@ -68,14 +72,13 @@ const experiences = [
   }
 ];
 
-// Update these if your GitHub/LinkedIn handles ever change.
 const contactInfo = {
   email: "vegaaj429@gmail.com",
   phone: "+63 966 651 4773",
   location: "Cebu City, Philippines",
   github: "https://github.com/ajvdos",
   linkedin: "https://www.linkedin.com/in/april-justine-vega-113474171/",
-  resumeFile: "/Resume.pdf" // place your resume PDF in the /public folder with this name
+  resumeFile: "/VEGA_RESUME.pdf" 
 };
 
 export default function Home() {
@@ -122,8 +125,8 @@ export default function Home() {
           <p className="eyebrow">SOFTWARE DEVELOPMENT • INTEGRATION</p>
           <h1>Building systems that <em>connect</em>.</h1>
           <p className="lead">
-            I'm <strong>April Justine C. Vega</strong>, a Backend Developer and Integration Consultant
-            focused on TypeScript, modern web development, APIs, and reliable system integrations.
+            I'm <strong>April Justine C. Vega</strong>, a Junior Full Stack Developer focused on TypeScript and Integration Consultant
+            focused on UKG Ready and Everything Benefits, modern web development, APIs, and reliable system integrations.
           </p>
           <div className="hero-actions">
             <a className="button primary" href="#projects">View My Work</a>
@@ -207,12 +210,12 @@ export default function Home() {
           <div className="project-header">
             <div>
               <p className="eyebrow">FULL-STACK CONTRIBUTION</p>
-              <a
+              
                 className="project-link"
                 href="https://www.adeus.app/"
                 target="_blank"
                 rel="noreferrer"
-              >
+              <a>
                 <h2>Adeus <span>Life.</span></h2>
               </a>
             </div>
