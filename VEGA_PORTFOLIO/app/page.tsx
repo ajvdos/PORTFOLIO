@@ -210,12 +210,7 @@ export default function Home() {
           <div className="project-header">
             <div>
               <p className="eyebrow">FULL-STACK CONTRIBUTION</p>
-              
-                className="project-link"
-                href="https://www.adeus.app/"
-                target="_blank"
-                rel="noreferrer"
-              <a>
+              <a className="project-link" href="https://www.adeus.app/" target="_blank" rel="noreferrer">
                 <h2>Adeus <span>Life.</span></h2>
               </a>
             </div>
