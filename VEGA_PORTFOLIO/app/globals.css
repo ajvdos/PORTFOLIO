@@ -31,3 +31,22 @@ h1 { font-size:clamp(52px,7vw,94px); line-height:.98; letter-spacing:-.07em; mar
 footer { padding-top:30px!important; padding-bottom:30px!important; border-top:1px solid var(--line); color:var(--muted); display:flex; justify-content:space-between; font-family:"DM Mono"; font-size:11px; }
 @media(max-width:850px){.hero,.about-grid,.contact{grid-template-columns:1fr;gap:40px}.skills-grid{grid-template-columns:repeat(2,1fr)}.contribution-grid{grid-template-columns:1fr}.experience-card{grid-template-columns:1fr;gap:15px}.links{display:none}.links.show{display:flex;position:absolute;top:76px;left:0;right:0;padding:24px 28px;background:#0b0e14;flex-direction:column;border-bottom:1px solid var(--line)}.menu{display:block}.nav{position:relative}.hero{padding-top:70px}.system-card{max-width:600px}.section{padding-top:75px;padding-bottom:75px}} 
 @media(max-width:520px){.skills-grid{grid-template-columns:1fr}.hero-actions{flex-direction:column;align-items:flex-start}footer{flex-direction:column;gap:10px}.project-header{gap:20px}.project-mark{width:48px;height:48px;flex:none}}
+.hero-photo {
+  width: 100%;
+  max-width: 520px;
+  height: 560px;
+  margin-left: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #111722;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}

@@ -121,24 +121,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="system-card">
-          <div className="terminal-top"><span></span><span></span><span></span><b>system.map</b></div>
-          <div className="flow">
-            <div className="node">React UI</div>
-            <i>→</i>
-            <div className="node">Next.js</div>
-            <i>→</i>
-            <div className="node">API</div>
-            <i>→</i>
-            <div className="node accent">PostgreSQL</div>
-          </div>
-          <div className="terminal-lines">
-            <p><span>01</span> interface.ready = true</p>
-            <p><span>02</span> api.connected = true</p>
-            <p><span>03</span> data.flow = "reliable"</p>
-            <p><span>04</span> status = <b>"building"</b></p>
-          </div>
+        <div className="hero-photo">
+          <img
+            src="/profile.jpg"
+            alt="April Justine C. Vega"
+          />
         </div>
+        
       </section>
 
       <section id="about" className="section">
