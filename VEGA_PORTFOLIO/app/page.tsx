@@ -84,11 +84,17 @@ const contactInfo = {
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   async function submitContact(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
+
+    setSubmitting(true);
     setStatus("Sending...");
-    const form = new FormData(e.currentTarget);
+
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
     const payload = Object.fromEntries(form.entries());
 
     try {
@@ -100,9 +106,11 @@ export default function Home() {
 
       if (!response.ok) throw new Error("Failed");
       setStatus("Message sent successfully.");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch {
       setStatus("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
     }
   }
 
@@ -300,11 +308,21 @@ export default function Home() {
         </div>
 
         <form onSubmit={submitContact} className="contact-form">
+          <input
+            type="text"
+            name="website"
+            autoComplete="off"
+            tabIndex={-1}
+            style={{ position: "absolute", left: "-9999px", opacity: 0 }}
+            aria-hidden="true"
+          />
           <input name="name" placeholder="Your name" required />
           <input name="email" type="email" placeholder="Email address" required />
           <input name="subject" placeholder="Subject (optional)" />
           <textarea name="message" placeholder="Tell me about your message..." rows={6} required />
-          <button className="button primary" type="submit">Send Message →</button>
+          <button className="button primary" type="submit" disabled={submitting}>
+            {submitting ? "Sending..." : "Send Message →"}
+          </button>
           {status && <p className="status">{status}</p>}
         </form>
       </section>
