@@ -68,6 +68,15 @@ const experiences = [
   }
 ];
 
+const contactInfo = {
+  email: "vegaaj429@gmail.com",
+  phone: "+63 966 651 4773",
+  location: "Cebu City, Philippines",
+  github: "https://github.com/ajvdos",
+  linkedin: "https://www.linkedin.com/in/april-justine-vega-113474171/",
+  resumeFile: "/VEGA_RESUME.pdf" 
+};
+
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState("");
@@ -245,6 +254,58 @@ export default function Home() {
           <button className="button primary" type="submit">Send Message →</button>
           {status && <p className="status">{status}</p>}
         </form>
+      </section>
+
+      <section className="section contact-info">
+        <div className="contact-info-intro">
+          <h2>Let's Connect</h2>
+          <p>
+            I'm always interested in new opportunities and challenging projects. Whether you have a
+            question about my work, want to collaborate, or just want to say hello, feel free to reach out!
+          </p>
+          <a className="button secondary resume-download" href={contactInfo.resumeFile} download>
+            <span aria-hidden="true">⭳</span> Download Resume
+          </a>
+        </div>
+
+        <div className="contact-info-cards">
+          <a className="contact-card" href={`mailto:${contactInfo.email}`}>
+            <span className="contact-icon" aria-hidden="true">✉</span>
+            <span>
+              <span className="contact-label">Email</span>
+              <span className="contact-value">{contactInfo.email}</span>
+            </span>
+          </a>
+
+          <a className="contact-card" href={`tel:${contactInfo.phone.replace(/\s+/g, "")}`}>
+            <span className="contact-icon" aria-hidden="true">☎</span>
+            <span>
+              <span className="contact-label">Phone</span>
+              <span className="contact-value">{contactInfo.phone}</span>
+            </span>
+          </a>
+
+          <div className="contact-card">
+            <span className="contact-icon" aria-hidden="true">📍</span>
+            <span>
+              <span className="contact-label">Location</span>
+              <span className="contact-value">{contactInfo.location}</span>
+            </span>
+          </div>
+        </div>
+
+        <div className="contact-info-social">
+          <a href={contactInfo.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+            </svg>
+          </a>
+          <a href={contactInfo.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M0 1.15C0 .52.53 0 1.18 0h13.64C15.47 0 16 .52 16 1.15v13.7c0 .63-.53 1.15-1.18 1.15H1.18C.53 16 0 15.48 0 14.85V1.15ZM4.75 13.4V6.16H2.4v7.24h2.35Zm-1.17-8.23c.82 0 1.33-.55 1.33-1.23-.01-.7-.51-1.23-1.31-1.23-.8 0-1.33.53-1.33 1.23 0 .68.51 1.23 1.3 1.23h.01ZM8.9 13.4V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.24-.88.87 0 1.22.67 1.22 1.64v3.87h2.35V9.25c0-2.19-1.16-3.21-2.72-3.21-1.25 0-1.81.7-2.12 1.19h.02V6.16H6.62c.03.66 0 7.24 0 7.24H8.9Z"/>
+            </svg>
+          </a>
+        </div>
       </section>
 
       <footer>
