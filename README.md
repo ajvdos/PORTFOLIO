@@ -6,7 +6,7 @@ My personal portfolio website, built to showcase my experience and projects — 
 - Next.js + React
 - TypeScript
 - Prisma ORM
-- PostgreSQL
+- PostgreSQL (hosted on Neon)
 - Deployed on Vercel
 
 ## Features
@@ -28,19 +28,25 @@ cd your-repo
 npm install
 ```
 
-Set up your environment variables:
+### Set up the database
 
-```bash
-cp .env.example .env.local
+This project uses [Neon](https://neon.tech) for PostgreSQL hosting.
+
+1. Create a free Neon account and project.
+2. Copy your connection string from the Neon dashboard.
+3. Create a `.env` file in the project root:
+
+```dotenv
+DATABASE_URL="postgresql://your-connection-string-here"
 ```
 
-Add your PostgreSQL `DATABASE_URL` inside `.env.local`, then push the schema:
+4. Push the schema to your database:
 
 ```bash
 npx prisma db push
 ```
 
-Run the dev server:
+### Run the app
 
 ```bash
 npm run dev
@@ -50,7 +56,12 @@ Visit http://localhost:3000.
 
 ## Deployment
 
-This project is set up to deploy on [Vercel](https://vercel.com). Push to GitHub, import the repo into Vercel, add your `DATABASE_URL` environment variable, and deploy.
+This project is set up to deploy on [Vercel](https://vercel.com).
+
+1. Push this project to GitHub.
+2. Import the repository into Vercel.
+3. Add the `DATABASE_URL` environment variable in Vercel's project settings (use the **pooled** Neon connection string for production).
+4. Deploy.
 
 ## Contact
 
