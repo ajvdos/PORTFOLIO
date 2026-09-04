@@ -78,7 +78,7 @@ const contactInfo = {
   location: "Cebu City, Philippines",
   github: "https://github.com/ajvdos",
   linkedin: "https://www.linkedin.com/in/april-justine-vega-113474171/",
-  resumeFile: "/VEGA_RESUME.pdf" 
+  resumeFile: "/CV_VEGA.pdf" 
 };
 
 export default function Home() {
